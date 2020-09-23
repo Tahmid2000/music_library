@@ -1,0 +1,19 @@
+.masthead-intro {
+    text-align: center;
+}
+
+.masthead {
+    padding: 14em 0;
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.masthead-intro {
+    margin-bottom: 0.1em;
+}
+
+.masthead-heading {
+    margin-top: -0.2em;
+}
