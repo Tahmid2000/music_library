@@ -1,6 +1,7 @@
 import React from "react";
-import { MDBRow, MDBCol, MDBMask, MDBView } from "mdbreact";
+import { MDBRow, MDBCol } from "mdbreact";
 import { Link } from "react-router-dom";
+/* MDBMask, MDBView  */
 class SongCard extends React.Component {
   render() {
     return (
@@ -12,26 +13,32 @@ class SongCard extends React.Component {
           }}
         >
           <MDBRow>
-            <MDBCol lg="3">
-              <img
-                className="img-fluid z-depth-2"
-                src={this.props.img}
-                alt=""
-              />
-            </MDBCol>
-            <MDBCol lg="5">
-              <div className="black-text">
-                <h4 className="font-weight-bold mb-3 text-center">
-                  {this.props.artist}
-                </h4>
+            <MDBCol lg="3"></MDBCol>
+            <MDBCol lg="6">
+              <div className="d-flex justify-content-center">
+                <img
+                  className="img-fluid z-depth-2"
+                  src={this.props.img}
+                  alt=""
+                />
               </div>
-
-              <h1 className="font-weight-bold mb-3 p-0">
-                <div className="black-text text-center">
-                  <strong>{this.props.title}</strong>
+              <div className="d-flex justify-content-center">
+                <div className="black-text">
+                  <h4 className="font-weight-bold mt-3 text-center">
+                    {this.props.artist}
+                  </h4>
                 </div>
-              </h1>
+              </div>
+              <div className="d-flex justify-content-center">
+                <h1 className="font-weight-bold p-0">
+                  <div className="black-text text-center">
+                    <strong>{this.props.title}</strong>
+                  </div>
+                </h1>
+              </div>
+              <div style={{ marginBottom: "-35px" }}></div>
             </MDBCol>
+            <MDBCol lg="3"></MDBCol>
           </MDBRow>
         </Link>
         <hr className="my-5" />

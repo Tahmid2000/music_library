@@ -1,5 +1,6 @@
 import React from "react";
 import { MDBInput } from "mdbreact";
+import "./SearchBar.css";
 class SearchBar extends React.Component {
   state = { term: "", debouncedTerm: "" };
   componentDidUpdate(prevProps, prevState) {

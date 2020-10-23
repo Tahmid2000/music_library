@@ -14,7 +14,7 @@ const Video = ({ title, artist }) => {
       setVideo(`https://www.youtube.com/embed/${vidId}`);
     };
     getVid(`${title} ${artist}`);
-  });
+  }, [title]);
 
   return (
     <div className="embed-responsive embed-responsive-16by9 z-depth-4">
@@ -22,6 +22,7 @@ const Video = ({ title, artist }) => {
         className="embed-responsive-item"
         src={video}
         frameBorder="0"
+        title={title}
       ></iframe>
       <hr />
     </div>

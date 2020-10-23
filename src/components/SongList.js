@@ -1,6 +1,5 @@
 import React from "react";
 import SongCard from "./SongCard";
-import { MDBCard, MDBCardBody } from "mdbreact";
 
 class SongList extends React.Component {
   render() {

@@ -1,11 +1,11 @@
 import React from "react";
-import axios from "axios";
 import Video from "./Video";
 import Lyrics from "./Lyrics";
 import deezer from "../apis/deezer";
 import { MDBContainer, MDBIcon } from "mdbreact";
 import SongByThisArtist from "./SongsByThisArtist";
 import AlbumOnDetail from "./AlbumOnDetail";
+import { Link } from "react-router-dom";
 import "./SongDetail.css";
 //open /Applications/Google\ Chrome.app --args --user-data-dir="/var/tmp/Chrome dev session" --disable-web-security
 
@@ -22,6 +22,7 @@ class SongDetail extends React.Component {
     this.getData(
       `${this.props.match.params.title} ${this.props.match.params.artist}`
     );
+    window.scrollTo(0, 0);
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -34,6 +35,7 @@ class SongDetail extends React.Component {
           `${this.props.match.params.title} ${this.props.match.params.artist}`,
           `${this.props.match.params.title}`
         );
+        window.scrollTo(0, 0);
       }
     }
   }
@@ -44,7 +46,8 @@ class SongDetail extends React.Component {
         q: term
       }
     });
-    let songData = response.data.data[0];
+    let songData = [];
+    if (typeof response !== "undefined") songData = response.data.data[0];
     if (typeof songData === "undefined") {
       let newResponse = await deezer.get("", {
         params: {
@@ -69,6 +72,11 @@ class SongDetail extends React.Component {
   render() {
     return (
       <React.Fragment>
+        <Link to="/" exact="true">
+          <div className="back-arrow">
+            <MDBIcon icon="arrow-left" />
+          </div>
+        </Link>
         <header className="masthead">
           <div className="d-flex justify-content-center">
             <p className="masthead-intro">
@@ -81,7 +89,7 @@ class SongDetail extends React.Component {
             </h1>
           </div>
         </header>
-        <MDBContainer>
+        <MDBContainer style={{ backgroundColor: "white" }}>
           <div className="mt-5"></div>
           <Video
             title={this.props.match.params.title}

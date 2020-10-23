@@ -17,7 +17,7 @@ const SongsByThisArtist = ({ artistID, curTitle }) => {
     const renderedList = songs.map(song => {
       if (song.title !== curTitle) {
         return (
-          <React.Fragment>
+          <React.Fragment key={song.id}>
             <div className="d-flex justify-content-center">
               <SongTile
                 key={song.id}

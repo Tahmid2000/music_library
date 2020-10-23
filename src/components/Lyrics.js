@@ -25,7 +25,7 @@ const Lyrics = ({ title, artist, url }) => {
         setFetched(true);
       });
     }
-  });
+  }, [fetched]);
   return (
     <div className="lyrics text-center" style={{ whiteSpace: "pre-wrap" }}>
       {!fetched ? (
