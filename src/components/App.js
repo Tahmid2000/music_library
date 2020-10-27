@@ -1,5 +1,4 @@
 import React from "react";
-
 import HomePage from "./HomePage";
 import SongDetail from "./SongDetail";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";

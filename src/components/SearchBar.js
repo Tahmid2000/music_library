@@ -7,7 +7,7 @@ class SearchBar extends React.Component {
     if (this.state.term !== prevState.term && this.state.term !== "") {
       const timerId = setTimeout(() => {
         this.setState({ debouncedTerm: this.state.term });
-      }, 400);
+      }, 750);
       return () => {
         clearTimeout(timerId);
       };

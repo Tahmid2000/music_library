@@ -22,8 +22,14 @@ const Lyrics = ({ title, artist }) => {
   return (
     <div className="lyrics text-center" style={{ whiteSpace: "pre-wrap" }}>
       {!fetched ? (
-        <div className="spinner-border" role="status">
-          <span className="sr-only">Loading...</span>
+        <div>
+          <div>
+            You may get a CORS block error. To bypass this, you need to disable
+            Same-Origin Policy in your browser.
+          </div>
+          <div className="spinner-border" role="status">
+            <span className="sr-only">Loading...</span>
+          </div>
         </div>
       ) : (
         lyrics

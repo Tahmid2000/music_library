@@ -49,7 +49,9 @@ class HomePage extends React.Component {
                   <SearchBar onSubmit={this.onSearchSubmit} />
                 </MDBContainer>
                 <div className="mx-3">
-                  {this.state.songs.length ? (
+                  {typeof this.state.songs === "undefined" ? (
+                    ""
+                  ) : this.state.songs.length ? (
                     <SongList songs={this.state.songs} />
                   ) : (
                     ""
