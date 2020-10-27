@@ -1,16 +1,18 @@
 import React from "react";
 import SearchBar from "./SearchBar";
 import SongList from "./SongList";
-import genius from "../apis/genius";
+import deezer from "../apis/deezer";
 import { MDBRow, MDBCol, MDBView, MDBContainer } from "mdbreact";
 
 class HomePage extends React.Component {
   state = { songs: [] };
   onSearchSubmit = async term => {
-    const response = await genius.get("/search", {
-      params: { q: term }
+    let response = await deezer.get("", {
+      params: {
+        q: term
+      }
     });
-    this.setState({ songs: response.data.response.hits });
+    this.setState({ songs: response.data.data });
   };
   render() {
     return (

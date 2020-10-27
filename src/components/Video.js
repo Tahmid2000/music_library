@@ -14,7 +14,7 @@ const Video = ({ title, artist }) => {
       setVideo(`https://www.youtube.com/embed/${vidId}`);
     };
     getVid(`${title} ${artist}`);
-  }, [title]);
+  }, [title, artist]);
 
   return (
     <div className="embed-responsive embed-responsive-16by9 z-depth-4">

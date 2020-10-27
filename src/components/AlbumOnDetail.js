@@ -7,7 +7,8 @@ const AlbumOnDetail = ({ albumID }) => {
   useEffect(() => {
     const getData = async () => {
       const response = await axios.get(
-        `https://api.deezer.com/album/${albumID}/tracks`
+        `https://cors-anywhere.herokuapp.com/https://api.deezer.com/album/${albumID}/tracks`,
+        { headers: { "Access-Control-Allow-Origin": "*" } }
       );
       if (typeof response !== "undefined") setSongs(response.data.data);
     };

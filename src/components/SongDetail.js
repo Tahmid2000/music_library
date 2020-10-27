@@ -32,15 +32,14 @@ class SongDetail extends React.Component {
         prevState.artist !== this.props.match.params.artist
       ) {
         this.getData(
-          `${this.props.match.params.title} ${this.props.match.params.artist}`,
-          `${this.props.match.params.title}`
+          `${this.props.match.params.title} ${this.props.match.params.artist}`
         );
         window.scrollTo(0, 0);
       }
     }
   }
 
-  getData = async (term, title) => {
+  getData = async term => {
     let response = await deezer.get("", {
       params: {
         q: term
@@ -94,13 +93,11 @@ class SongDetail extends React.Component {
           <Video
             title={this.props.match.params.title}
             artist={this.props.match.params.artist}
-            id={this.state.id}
           />
           <hr />
           <Lyrics
             title={this.props.match.params.title}
             artist={this.props.match.params.artist}
-            url={this.state.url}
           />
           <AlbumOnDetail albumID={this.state.albumDetail.id} />
           <SongByThisArtist

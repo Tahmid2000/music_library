@@ -7,7 +7,7 @@ const SongsByThisArtist = ({ artistID, curTitle }) => {
   useEffect(() => {
     const getData = async () => {
       const response = await axios.get(
-        `https://api.deezer.com/artist/${artistID}/top?limit=10`
+        `https://cors-anywhere.herokuapp.com/https://api.deezer.com/artist/${artistID}/top?limit=10`
       );
       if (typeof response !== "undefined") setSongs(response.data.data);
     };
